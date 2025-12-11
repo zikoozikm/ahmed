@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="log.css">
+</head>
+
+<body>
+
+<div class="ms-login">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="ms-logo">
+
+  <h2 class="title">تسجيل الدخول</h2>
+  <p class="subtitle">اكتب البريد الإلكتروني وكلمة المرور</p>
+
+  <input type="email" id="loginEmail" placeholder="Email" required>
+  <input type="password" id="loginPassword" placeholder="Password" required>
+
+  <button id="loginBtn" class="btn">تسجيل الدخول</button>
+
+  <p id="msg" style="color:red; margin-top:10px;"></p>
+</div>
+
+<script type="module">
+
+  // --------- بياناتك المسموح لها ---------
+  const allowedEmail = "422225178@sha.edu.eg";
+  const allowedPass  = "123456789";
+
+  document.getElementById("loginBtn").addEventListener("click", function() {
+      const email = document.getElementById("loginEmail").value.trim();
+      const pass = document.getElementById("loginPassword").value.trim();
+      const msg = document.getElementById("msg");
+
+      if (email === allowedEmail && pass === allowedPass) {
+          msg.style.color = "green";
+          msg.textContent = "✔️ تسجيل الدخول ناجح";
+
+          setTimeout(() => {
+              window.location.href = "homear.html"; // الصفحة التانية
+          }, 700);
+
+      } else {
+          msg.style.color = "red";
+          msg.textContent = "❌ الإيميل أو الباسورد غلط";
+      }
+  });
+
+</script>
+
+</body>
+</html>

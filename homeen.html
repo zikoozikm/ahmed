@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FeeshApp — Mobile Car Wash</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="homeen.css">
+ 
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="site-navbar navbar navbar-expand-lg navbar-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand" href="#">Feesh<span style="color:var(--accent)">App</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <div class="d-flex">
+        <div class="d-flex align-items-center">
+    <button id="langToggle" class="btn btn-outline-primary mx-2" >  <li class="nav-item"><a  href="css.html">An</a></li>
+    </button>
+</div>
+        <a class="btn btn-primary custom" href="#" onclick="openWhats()">Book Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="title">Mobile Car Wash Service — Fast & Professional</h1>
+        <p class="lead">Book your car wash at your location and preferred time. Professional service for individuals and companies, clear options and prices.</p>
+
+        <form id="quickForm" class="booking-box row g-2">
+          <div class="col-md-6">
+            <div class="input-icon">
+              <i class="fa-solid fa-list"></i>
+              <select id="serviceSelect" class="form-select" required>
+                <option value="">Choose service</option>
+                <option value="1">Exterior wash</option>
+                <option value="2">Interior cleaning</option>
+                <option value="3">Full detail</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="input-icon">
+              <i class="fa-solid fa-phone"></i>
+              <input id="phoneInput" type="text" class="form-control" placeholder="Phone number" required>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-flex gap-2">
+              <button id="submitr">إرسال</button>
+              <a class="btn btn-outline-secondary" href="#pricing">View Packages</a>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-lg-6 d-none d-lg-block">
+        <!-- right-side illustrative image already used as background -->
+        <div style="height:360px; border-radius:12px; overflow:hidden;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT APP -->
+<section id="about-app" class="about-app-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Text -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="app-title">About FeeshApp</h2>
+        <p class="app-text">
+          FeeshApp provides a simple and fast experience to book mobile car wash services.
+          Choose the service, set your location on the map, and track your order in real time.
+          All without making a call — everything at your fingertips.
+        </p>
+
+        <ul class="app-features list-unstyled mt-3">
+          <li>✔ Easy and fast interface</li>
+          <li>✔ Automatic location detection</li>
+          <li>✔ Real-time order tracking</li>
+          <li>✔ Multiple secure payment methods</li>
+        </ul>
+
+        <!-- Store Badges -->
+        <div class="store-badges" role="region" aria-label="Download app">
+          <!-- Play Store -->
+          <a id="playBadge" class="store-badge play" href="#" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+            <span class="badge-left"><i class="fa-brands fa-google-play"></i></span>
+            <span class="badge-right">
+              <small class="small-text">Get it on</small>
+              <strong class="big-text">Google Play</strong>
+            </span>
+          </a>
+
+          <!-- App Store -->
+          <a id="appBadge" class="store-badge appstore" href="#" target="_blank" rel="noopener" aria-label="Download on the App Store">
+            <span class="badge-left"><i class="fa-brands fa-apple"></i></span>
+            <span class="badge-right">
+              <small class="small-text">Download on the</small>
+              <strong class="big-text">App Store</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- App Image -->
+      <div class="col-lg-6">
+        <img src="img/des.jpg" alt="Mobile App" class="app-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h3 class="mb-2" style="color:var(--primary)">Service Features</h3>
+      <p class="text-muted">Practical, transparent and fast — designed for your convenience</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="feature text-center p-4 h-100">
+          <i class="fa-solid fa-location-dot fa-2x" style="color:var(--accent)"></i>
+          <h5 class="mt-3">Accurate location</h5>
+          <p class="text-muted">We reach you wherever you are with precision.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature text-center p-4 h-100">
+          <i class="fa-solid fa-clock fa-2x" style="color:var(--accent)"></i>
+          <h5 class="mt-3">Quick booking</h5>
+          <p class="text-muted">Fast scheduling that fits your timetable.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature text-center p-4 h-100">
+          <i class="fa-solid fa-handshake-angle fa-2x" style="color:var(--accent)"></i>
+          <h5 class="mt-3">Quality guarantee</h5>
+          <p class="text-muted">Trained staff and professional equipment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h3 class="mb-2" style="color:var(--primary)">Our Packages</h3>
+      <p class="text-muted">Choose the package that fits your needs</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="price-card text-center h-100 p-4">
+          <h5>Starter</h5>
+          <div class="price my-2">50 EGP</div>
+          <p class="text-muted small">Exterior wash + light polish</p>
+          <ul class="text-start small">
+            <li>Exterior cleaning</li>
+            <li>Professional drying</li>
+            <li>Quick inspection</li>
+          </ul>
+          <button class="btn btn-primary custom mt-2">Book Package</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="price-card text-center h-100 p-4" style="border-color:var(--accent);">
+          <h5>Standard</h5>
+          <div class="price my-2">120 EGP</div>
+          <p class="text-muted small">Interior + Exterior + medium polish</p>
+          <ul class="text-start small">
+            <li>Full interior cleaning</li>
+            <li>Light engine clean</li>
+            <li>Exterior polish</li>
+          </ul>
+          <button class="btn btn-primary custom mt-2">Book Package</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="price-card text-center h-100 p-4">
+          <h5>Premium</h5>
+          <div class="price my-2">220 EGP</div>
+          <p class="text-muted small">Full care + advanced protection</p>
+          <ul class="text-start small">
+            <li>Professional polishing</li>
+            <li>Paint protection</li>
+            <li>Interior sanitization</li>
+          </ul>
+          <button class="btn btn-primary custom mt-2">Book Package</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BOOKING POPUP -->
+
+
+<!-- BOOKING POPUP -->
+<div id="bookingModal" class="modal-overlay">
+  <div class="modal-box">
+    <span id="closeModal" class="close-btn">&times;</span>
+
+    <h4 class="mb-3" style="color:var(--primary)">Complete Your Booking</h4>
+
+    <form id="bookingForm" class="row g-2">
+      <div class="col-12">
+        <input type="text" id="fname" class="form-control" placeholder="First Name" required>
+      </div>
+      <div class="col-12">
+        <input type="email" id="email2" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="col-12">
+        <input type="text" id="phone3" class="form-control" placeholder="Phone Number" required>
+      </div>
+      <button class="btn btn-primary custom mt-2 w-100">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- BLOG -->
+<section id="blog" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h3 style="color:var(--primary)">Latest Articles</h3>
+      <p class="text-muted">Tips and guides on car care</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <article class="post-card">
+          <img src="img/wash-your-car-yourself-2.webp" alt="post">
+          <div class="p-3">
+            <h5 style="color:var(--primary)">How to Wash Your Car Without Damaging the Paint</h5>
+            <p class="text-muted small">Safe methods to choose cleaners and pressure levels for your car.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Dec 12, 2024</small>
+              <a href="#" class="btn btn-sm btn-outline-secondary">Read More</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6">
+        <article class="post-card">
+          <img src="img/wash-your-car-yourself-2.webp" alt="post">
+          <div class="p-3">
+            <h5 style="color:var(--primary)">Best Polishing Tools</h5>
+            <p class="text-muted small">Compare home vs professional tools and their effect on shine.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Nov 30, 2024</small>
+              <a href="#" class="btn btn-sm btn-outline-secondary">Read More</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6">
+        <h4 style="color:var(--primary)">Contact Us</h4>
+        <p class="text-muted">If you have any questions or want a corporate offer, contact us and we'll get back to you soon.</p>
+
+        <form id="contactForm" class="row g-2">
+          <div class="col-12">
+            <input type="text" id="name" class="form-control" placeholder="Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" id="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" id="phone2" class="form-control" placeholder="Phone" required>
+          </div>
+          <div class="col-12">
+            <textarea id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary custom">Send</button>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="p-4" style="background:#fff; border-radius:10px; border:1px solid #f1eef7;">
+          <h6>Contact Info</h6>
+          <p class="small text-muted mb-1"><i class="fa-solid fa-phone me-2"></i> +20 100 000 0000</p>
+          <p class="small text-muted mb-1"><i class="fa-solid fa-envelope me-2"></i> info@feeshapp.com</p>
+          <p class="small text-muted"><i class="fa-solid fa-location-dot me-2"></i> Your City - Sample Address</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="mb-0 small text-muted">© 2025 FeeshApp — Educational Copy. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-end">
+        <a class="text-muted me-2" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="text-muted me-2" href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+ 
+
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCbkDvh2pD8nVpsulSIlzvKPUM8eLNQE2Q",
+    authDomain: "test-50ab3.firebaseapp.com",
+    databaseURL: "https://test-50ab3-default-rtdb.firebaseio.com",
+    projectId: "test-50ab3",
+    storageBucket: "test-50ab3.firebasestorage.app",
+    messagingSenderId: "793717385544",
+    appId: "1:793717385544:web:1104c70be562fa18ffab7d"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  document.getElementById("submitr").addEventListener("click", async function(e) {
+    e.preventDefault();
+
+    const service = document.getElementById("serviceSelect").value.trim();
+    const phone = document.getElementById("phoneInput").value.trim();
+
+    if (!service || !phone) {
+      alert("املأ الحقول كلها!");
+      return;
+    }
+
+    try {
+      const newEntryRef = push(ref(db, "Choose/" + service));
+      await set(newEntryRef, {
+        service: service,   // 👈 بإضافة السطر ده هتسجل الخدمة جوه السجل
+        phone: phone,
+        timestamp: Date.now()
+      });
+
+      alert("تم الحفظ بنجاح ✅");
+      document.getElementById("serviceSelect").value = "";
+      document.getElementById("phoneInput").value = "";
+    } catch (error) {
+      alert("فشل الإرسال: " + error.message);
+    }
+  });
+
+  // 🔥 ربط جديد خاص بـ Form التواصل
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone2").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !phone || !message) {
+    alert("املأ كل الحقول!");
+    return;
+  }
+
+  try {
+    // حفظ في مسار جديد ContactMessages
+    const newMsgRef = push(ref(db, "ContactMessages"));
+    await set(newMsgRef, {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+      timestamp: Date.now()
+    });
+
+    alert("تم إرسال الرسالة بنجاح ✅");
+
+    // تفريغ الحقول
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone2").value = "";
+    document.getElementById("message").value = "";
+
+  } catch (error) {
+    alert("فشل الإرسال: " + error.message);
+  }
+});
+
+
+  document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fname  = document.getElementById("fname").value.trim();
+    const email  = document.getElementById("email2").value.trim();
+    const phone  = document.getElementById("phone3").value.trim();
+
+    if (!fname || !email || !phone) {
+      alert("املأ كل البيانات!");
+      return;
+    }
+
+    try {
+      const newEntry = push(ref(db, "Bookings"));
+      await set(newEntry, {
+        name: fname,
+        email: email,
+        phone: phone,
+        timestamp: Date.now()
+      });
+
+      alert("تم الحجز بنجاح ✅");
+
+      // تفريغ البيانات
+      document.getElementById("bookingForm").reset();
+
+      // إخفاء البوب اب
+      document.getElementById("bookingModal").style.display = "none";
+
+    } catch(err) {
+      alert("Error: " + err.message);
+    }
+  });
+
+
+</script>
+
+<script>
+  const modal = document.getElementById("bookingModal");
+  const closeModal = document.getElementById("closeModal");
+
+  // لما تدوس Book Package
+  document.querySelectorAll(".price-card button").forEach(btn => {
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+  });
+
+  // زرار ×
+  closeModal.onclick = () => modal.style.display = "none";
+
+  // لو دوست بره البوكس
+  window.onclick = (e) => {
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+
+
+
+
+</body>
+</html>

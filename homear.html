@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FeeshApp - نسخة لمشروعك</title>
+
+  <!-- Google Font (Arabic) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="ht.css">
+  <!-- Google Font (Cairo already used in مشروعك) -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome (أيقونات) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js";></script>
+<script src="test.js"></script>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="site-navbar navbar navbar-expand-lg navbar-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand" href="#">Feesh<span style="color:var(--accent)">App</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="#features">المميزات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">الباقات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">المدونة</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">تواصل</a></li>
+      </ul>
+      <div class="d-flex">
+        <div class="d-flex align-items-center">
+    <button id="langToggle" class="btn btn-outline-primary mx-2" >  
+  
+    </button>
+</div>
+
+        <a class="btn btn-primary custom" href="#">حجز الآن</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="title">خدمة غسيل السيارات المتنقلة - بسرعة واحتراف</h1>
+        <p class="lead">احجز غسيل سيارتك في المكان والوقت اللي تحبه. خدمة احترافية للفرد والشركات، خيارات متعددة وأسعار واضحة.</p>
+
+        <form id="quickForm" class="row g-2">
+          <div class="col-md-6">
+            <select id="serviceSelect" class="form-select" required >
+              <option value="">اختر الخدمة</option>
+              <option value="1">غسيل خارجي</option>
+              <option value="2">غسيل داخلي</option>
+              <option value="3">تلميع شامل</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <input id="phoneInput" type="text" class="form-control"  placeholder="رقم الهاتف" required>
+          </div>
+          <div class="col-12">
+            <div class="d-flex gap-2">
+            <button id="submitr">إرسال</button>
+              <a class="btn btn-outline-secondary" href="#pricing">اطّلع على الباقات</a>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-lg-6 d-none d-lg-block">
+        <!-- illustrative image -->
+        <div style="border-radius:12px; overflow:hidden; box-shadow: 0 10px 30px rgba(16,12,40,0.06);" >
+          <img src="img/des.jpg" alt="hero" style="width:100%; height:360px; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="about-app" class="about-app-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Text -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="app-title">نبذة عن تطبيق FeeshApp</h2>
+        <p class="app-text">
+          يقدم لك تطبيق <strong>FeeshApp</strong> تجربة سهلة لحجز خدمات غسيل السيارات المتنقلة.
+          من خلال التطبيق تقدر تختار نوع الخدمة، تحدد موقعك على الخريطة، وتتابع حالة الطلب لحظة بلحظة.
+          كل ده من غير ما ترفع سماعة التليفون!
+        </p>
+
+        <ul class="app-features list-unstyled mt-3">
+          <li>✔ واجهة سهلة وسريعة</li>
+          <li>✔ تحديد الموقع تلقائياً</li>
+          <li>✔ متابعة حالة الطلب في الوقت الفعلي</li>
+          <li>✔ طرق دفع متعددة وآمنة</li>
+        </ul>
+
+      <!-- Store Badges -->
+<div class="store-badges" role="region" aria-label="Download app">
+  <!-- Play Store -->
+  <a id="playBadge" class="store-badge play" href="#" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+    <span class="badge-left"><i class="fa-brands fa-google-play"></i></span>
+    <span class="badge-right">
+      <small class="small-text">احصل عليه على</small>
+      <strong class="big-text">Google Play</strong>
+    </span>
+  </a>
+
+  <!-- App Store -->
+  <a id="appBadge" class="store-badge appstore" href="#" target="_blank" rel="noopener" aria-label="Download on the App Store">
+    <span class="badge-left"><i class="fa-brands fa-apple"></i></span>
+    <span class="badge-right">
+      <small class="small-text">حمل التطبيق من</small>
+      <strong class="big-text">App Store</strong>
+    </span>
+  </a>
+</div>
+
+
+      <!-- App Image -->
+      <div class="col-lg-6 text-center">
+        <img src="img/des.jpg" alt="Mobile App" class="app-img" >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- FEATURES -->
+<section id="features" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h3 class="mb-2" style="color:var(--primary)">مميزات الخدمة</h3>
+      <p class="text-muted">خدمة عملية، شفافة، وسريعة — مصممة لراحتك</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="feature text-center p-4 h-100">
+          <i class="fa-solid fa-location-dot fa-2x" style="color:var(--accent)"></i>
+          <h5 class="mt-3">نظام تحديد الموقع</h5>
+          <p class="text-muted">نصل إليك حيثما تكون بصورة دقيقة.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature text-center p-4 h-100">
+          <i class="fa-solid fa-clock fa-2x" style="color:var(--accent)"></i>
+          <h5 class="mt-3">حجز خلال دقائق</h5>
+          <p class="text-muted">حجز سريع وجدولة مرنة تناسب مواعيدك.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature text-center p-4 h-100">
+          <i class="fa-solid fa-handshake-angle fa-2x" style="color:var(--accent)"></i>
+          <h5 class="mt-3">ضمان الجودة</h5>
+          <p class="text-muted">فريق مدرب ومعدات احترافية.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h3 class="mb-2" style="color:var(--primary)">باقاتنا</h3>
+      <p class="text-muted">اختر الباقة المناسبة لاحتياجك</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="price-card text-center h-100 p-4">
+          <h5>باقة التأسيس</h5>
+          <div class="price my-2">50 ج.م</div>
+          <p class="text-muted small">غسيل خارجي + تلميع خفيف</p>
+          <ul class="text-start small">
+            <li>تنظيف الجسم الخارجي</li>
+            <li>تجفيف احترافي</li>
+            <li>فحص سريع</li>
+          </ul>
+          <button class="btn btn-primary custom mt-2">احجز الباقة</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="price-card text-center h-100 p-4 border-2" style="border-color:var(--accent);">
+          <h5>الباقة المتوسطة</h5>
+          <div class="price my-2">120 ج.م</div>
+          <p class="text-muted small">داخلي + خارجي + تلميع متوسط</p>
+          <ul class="text-start small">
+            <li>تنظيف داخلي شامل</li>
+            <li>تنظيف محرك خفيف</li>
+            <li>تلميع خارجي</li>
+          </ul>
+          <button class="btn btn-primary custom mt-2">احجز الباقة</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="price-card text-center h-100 p-4">
+          <h5>الباقة الاحترافية</h5>
+          <div class="price my-2">220 ج.م</div>
+          <p class="text-muted small">باقة شاملة مع عناية متقدمة</p>
+          <ul class="text-start small">
+            <li>تلميع احترافي</li>
+            <li>حماية الطلاء</li>
+            <li>تعقيم داخلي</li>
+          </ul>
+          <button class="btn btn-primary custom mt-2">احجز الباقة</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="bookingModal" class="modal-overlay">
+  <div class="modal-box">
+    <span id="closeModal" class="close-btn">&times;</span>
+
+    <h4 class="mb-3" style="color:var(--primary)">Complete Your Booking</h4>
+
+    <form id="bookingForm" class="row g-2">
+      <div class="col-12">
+        <input type="text" id="fname" class="form-control" placeholder="First Name" required>
+      </div>
+      <div class="col-12">
+        <input type="email" id="email2" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="col-12">
+        <input type="text" id="phone3" class="form-control" placeholder="Phone Number" required>
+      </div>
+      <button class="btn btn-primary custom mt-2 w-100">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- BLOG / POSTS -->
+<section id="blog" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h3 style="color:var(--primary)">أحدث المقالات</h3>
+      <p class="text-muted">نصائح ومقالات عن العناية بالسيارات</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <article class="post-card">
+          <img src="img/wash-your-car-yourself-2.webp"  style="width: 50rem;" alt="post">
+          <div class="p-3">
+            <h5 style="color:var(--primary)">نصائح لغسيل السيارة دون إتلاف الطلاء</h5>
+            <p class="text-muted small">طرق آمنة لاختيار المنظفات ودرجة الضغط المناسبة لغسيل سيارتك.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">12 ديسمبر 2024</small>
+              <a href="#" class="btn btn-sm btn-outline-secondary">اقرأ المزيد</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6">
+        <article class="post-card">
+          <img src="img/wash-your-car-yourself-2.webp" style="width: 50rem;" alt="post">
+          <div class="p-3">
+            <h5 style="color:var(--primary)">أفضل أدوات تلميع الطلاء</h5>
+            <p class="text-muted small">مقارنة بين الأدوات المنزلية والاحترافية وأثرها على لمعة الطلاء.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">30 نوفمبر 2024</small>
+              <a href="#" class="btn btn-sm btn-outline-secondary">اقرأ المزيد</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<html lang="ar" dir="rtl">
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6">
+        <h4 style="color:var(--primary)">تواصل معنا</h4>
+        <p class="text-muted">لو عندك استفسار أو تريد عرض للشركات تواصل معنا وسنعود لك فورًا.</p>
+
+        <form id="contactForm" class="row g-2">
+          <div class="col-12">
+            <input type="text" id="name" class="form-control" placeholder="الاسم" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" id="email" class="form-control" placeholder="البريد الإلكتروني" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" id="phone2" class="form-control" placeholder="رقم الهاتف" required>
+          </div>
+          <div class="col-12">
+            <textarea id="message" class="form-control" rows="4" placeholder="رسالتك" required></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary custom">إرسال</button>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="p-4" style="background:#fff; border-radius:10px; border:1px solid #f1eef7;">
+          <h6>معلومات الاتصال</h6>
+          <p class="small text-muted mb-1"><i class="fa-solid fa-phone me-2"></i> 0100-000-0000</p>
+          <p class="small text-muted mb-1"><i class="fa-solid fa-envelope me-2"></i> info@feeshapp.com</p>
+          <p class="small text-muted"><i class="fa-solid fa-location-dot me-2"></i> مدينتك - عنوان وهمي</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="mb-0 small text-muted">© 2024 FeeshApp - نسخة تعليمية. كل الحقوق محفوظة.</p>
+      </div>
+      <div class="col-md-6 text-start">
+        <a class="text-muted me-2" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="text-muted me-2" href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCbkDvh2pD8nVpsulSIlzvKPUM8eLNQE2Q",
+    authDomain: "test-50ab3.firebaseapp.com",
+    databaseURL: "https://test-50ab3-default-rtdb.firebaseio.com",
+    projectId: "test-50ab3",
+    storageBucket: "test-50ab3.firebasestorage.app",
+    messagingSenderId: "793717385544",
+    appId: "1:793717385544:web:1104c70be562fa18ffab7d"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  document.getElementById("submitr").addEventListener("click", async function(e) {
+    e.preventDefault();
+
+    const service = document.getElementById("serviceSelect").value.trim();
+    const phone = document.getElementById("phoneInput").value.trim();
+
+    if (!service || !phone) {
+      alert("املأ الحقول كلها!");
+      return;
+    }
+
+    try {
+      const newEntryRef = push(ref(db, "Choose/" + service));
+      await set(newEntryRef, {
+        service: service,   // 👈 بإضافة السطر ده هتسجل الخدمة جوه السجل
+        phone: phone,
+        timestamp: Date.now()
+      });
+
+      alert("تم الحفظ بنجاح ✅");
+      document.getElementById("serviceSelect").value = "";
+      document.getElementById("phoneInput").value = "";
+    } catch (error) {
+      alert("فشل الإرسال: " + error.message);
+    }
+  });
+
+  // 🔥 ربط جديد خاص بـ Form التواصل
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone2").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !phone || !message) {
+    alert("املأ كل الحقول!");
+    return;
+  }
+
+  try {
+    // حفظ في مسار جديد ContactMessages
+    const newMsgRef = push(ref(db, "ContactMessages"));
+    await set(newMsgRef, {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+      timestamp: Date.now()
+    });
+
+    alert("تم إرسال الرسالة بنجاح ✅");
+
+    // تفريغ الحقول
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone2").value = "";
+    document.getElementById("message").value = "";
+
+  } catch (error) {
+    alert("فشل الإرسال: " + error.message);
+  }
+});
+
+
+
+
+  document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fname  = document.getElementById("fname").value.trim();
+    const email  = document.getElementById("email2").value.trim();
+    const phone  = document.getElementById("phone3").value.trim();
+
+    if (!fname || !email || !phone) {
+      alert("املأ كل البيانات!");
+      return;
+    }
+
+    try {
+      const newEntry = push(ref(db, "Bookings"));
+      await set(newEntry, {
+        name: fname,
+        email: email,
+        phone: phone,
+        timestamp: Date.now()
+      });
+
+      alert("تم الحجز بنجاح ✅");
+
+      // تفريغ البيانات
+      document.getElementById("bookingForm").reset();
+
+      // إخفاء البوب اب
+      document.getElementById("bookingModal").style.display = "none";
+
+    } catch(err) {
+      alert("Error: " + err.message);
+    }
+  });
+
+
+
+
+
+</script>
+
+<script>
+  const modal = document.getElementById("bookingModal");
+  const closeModal = document.getElementById("closeModal");
+
+  // لما تدوس Book Package
+  document.querySelectorAll(".price-card button").forEach(btn => {
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+  });
+
+  // زرار ×
+  closeModal.onclick = () => modal.style.display = "none";
+
+  // لو دوست بره البوكس
+  window.onclick = (e) => {
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+
+
+
+</body>
+</html>
+
+</body>
+</html>
